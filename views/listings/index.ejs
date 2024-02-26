@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
 .filter{
@@ -14,7 +15,6 @@
   margin-top: 2rem;
   opacity: 0.7;
   display: inline-block;
-
 }
 .filter:hover{
   opacity: 1;
@@ -23,19 +23,6 @@
 .filter p{
   font-size: 0.8rem; 
 }
-
-    @media only screen and (max-width: 700px) {
-      .filter:nth-child(n+6) {
-        display: none;
-      }
-    }
-
-    @media only screen and (max-width: 700px){
-      .tax-toggle {
-        display: none;
-        
-      }
-    }
 .tax-info{
   display: none;
 }
@@ -51,6 +38,14 @@ align-items: center;
 
 }
 
+@media only screen and (max-width: 992px) {
+      .filter {
+        display: none;
+      }
+      .tax-toggle{
+        display:none;
+      }
+    }
 </style>
 
 
@@ -100,7 +95,7 @@ align-items: center;
        <p>Boats</p>
        </div>
 
-       <div class="tax-toggle">
+       <div class="tax-toggle" >
         <div class="form-check-reverse form-switch">
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
           <label class="form-check-label" for="flexSwitchCheckDefault">Display total after Taxes</label>
@@ -110,7 +105,7 @@ align-items: center;
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
       <% for(let listing of allListings) { %>
         <a href="/listings/<%= listing._id %>" class="listing-link">
-        <div class="card col listing-card">
+        <div class="card col listing-card mt-4">
           <img src="<%= listing.image.url %>" class="card-img-top" alt="listing-image" style="height: 20rem;">
           <div class="card-img-overlay"></div>
           <div class="card-body">
